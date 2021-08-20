@@ -1,0 +1,17 @@
+This Repository update the Ansible inventory from AWS dynamically.
+------------------------------------------------------------------------
+•	Copy the following files into the controller node to enable dynamic inventory.
+https://github.com/mevasaroj/AWS/blob/main/ec2.ini
+https://github.com/mevasaroj/AWS/blob/main/ec2.py
+
+•	Change the permission of both file to executable
+$ chmod +x ec2.py
+$ chmod +x ec2.ini
+
+•	Pass AWS_ACCESS_KEY and AWS_SECRET_KEY in the ec2.ini file for authentication
+
+•	Run the ec2.py to update the Ansible inventory automatically.
+$ ./ec2.py - - list
+
+•	Validate the Ansible inventory file by running following command.
+$ ansible all — —list-hosts
