@@ -39,19 +39,19 @@
      
   
 ## 4. Create the following Security Group for Private connection.
-#### eks-cluster-addition-security-group
+#### 4.1. eks-cluster-addition-security-group
      -
      -
      -
      -
      - a
-#### eks-cluster-workernode-security-group
+#### 4.2. eks-cluster-workernode-security-group
      -
      -
      -
      -
      - a
-#### vpc-endpoint-security-group
+#### 4.3. vpc-endpoint-security-group
      -
      -
      -
