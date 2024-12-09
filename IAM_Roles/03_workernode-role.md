@@ -1,7 +1,7 @@
 # WorkerNode-role
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create role__.
-- Under = Select Trusted entity type
+- Under : **Select Trusted entity type**
    - Trusted entity type : AWS service
    - Use cases : type "ec2" --> Select "ec2" --> First Option
    - Under Add permission : Add Following Permission policies
