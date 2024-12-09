@@ -9,12 +9,12 @@
    - Use cases : type **"EKS"** --> Select __"EKS Cluster"__ --> Second Option
      
  - Under Add permission : **(Default)** --> No Changes
- - 
+   
  - Under Name, review, and create
-   - Role Name : eks-cluster-role
-   - Description : No Changes
-   - Step 1: Select trusted entities : No Changes
-   - Step 2: Add permissions: No Changes
+   - Role Name : **eks-cluster-role**
+   - Description : __No Changes__
+   - Step 1: Select trusted entities : __No Changes__
+   - Step 2: Add permissions: __No Changes__
    - Step 3: Add Tags : Add the require tags
      
  - Click **Create role**
