@@ -5,7 +5,7 @@
 - Under : **Select Trusted entity type**
    - Trusted entity type : **AWS service**
    - Use cases : type __"ec2"__ --> Select __"ec2"__ --> First Option
-   - Under Add permission : Add Following Permission policies
+   - Under **Add permission** : Add Following Permission policies
       - AmazonEKSWorkerNodePolicy
       - AmazonEC2ContainerRegistryReadOnly
       - AmazonSSMManagedInstanceCore
