@@ -1,4 +1,4 @@
-# WorkerNode-role
+# Create WorkerNode-role
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create role__.
   
@@ -19,7 +19,33 @@
    - Description : __No Changes__
    - Step 1: Select trusted entities : __No Changes__
    - Step 2: Add permissions: __No Changes__
-   - Step 3: Add Tags : Add the require tags   
+   - Step 3: Add Tags : Add the require tags
 
 - Click **create role**
 
+
+# Create Custom KMS Key Policy
+- Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+- In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create policy__.
+- Click on JSON
+- Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/kms.tf
+- Click __Next__
+- Under **Review and create**
+   - Policy Name : KMS-Key
+   - Description : KMS-Key
+   - Add Tags : Add require tags 
+- Click __Create Policy__
+
+# Add KMS Key Policy to Above eks-cluster-role
+- Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+- Below __Access management__ (Left Pane) --> Click **Roles**
+- Select **eks-workernode-role** from list
+- Under __Permission__ --> Click **Add Permission** --> Click **Attach Policies**
+- Type __KMS__ in search --> Select (Check Mark) __KMS-Key__ Policy (Created above) --> Click **Add Permision**
+
+# Update the  KMS Key Policy to Above eks-cluster-role
+- Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+- Below __Access management__ (Left Pane) --> Click **Roles**
+- Select **eks-workernode-role** from list
+- Click **Trust relationships**
+- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/eks-cluster-role_trust_relationship.tf
