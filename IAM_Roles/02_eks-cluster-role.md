@@ -4,13 +4,13 @@
   
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create role__.
   
-- Under = Select Trusted entity type
+- Under : **Select Trusted entity type**
    - Trusted entity type : **AWS service**
    - Use cases : type **"EKS"** --> Select __"EKS Cluster"__ --> Second Option
      
  - Under Add permission : **(Default)** --> No Changes
    
- - Under Name, review, and create
+ - Under **Name, review, and create**
    - Role Name : **eks-cluster-role**
    - Description : __No Changes__
    - Step 1: Select trusted entities : __No Changes__
@@ -25,7 +25,7 @@
 - Click on JSON
 - Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/kms.tf
 - Click __Next__
-- Under Review and create
+- Under **Review and create**
    - Policy Name : KMS-Key
    - Description : KMS-Key
    - Add Tags : Add require tags
