@@ -18,3 +18,10 @@
    - Step 3: Add Tags : Add the require tags
      
  - Click **Create role**
+
+# Add KMS Key Permission to Above cluster-role
+- Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+- Below __Access management__ (Left Pane) --> Click **Roles**
+- Select **eks-cluster-role** from list
+- Under __Permission__ --> Click **Add Permission** --> **Attache Policies**
+- Type __KMS__ --> Select (CHeck Mark) --> Click **Add Permision**
