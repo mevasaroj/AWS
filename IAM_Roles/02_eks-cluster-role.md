@@ -23,7 +23,7 @@
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create policy__.
 - Click on JSON
-- Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/kms.tf
+- Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/Policy_kms.tf
 - Click __Next__
 - Under **Review and create**
    - Policy Name : KMS-Key
