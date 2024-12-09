@@ -44,4 +44,4 @@
 - Below __Access management__ (Left Pane) --> Click **Roles**
 - Select **eks-cluster-role** from list
 - Click **Trust relationships**
-- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_1_eks-cluster-role_trust_relationship.tf
+- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/eks-cluster-role_trust_relationship.tf
