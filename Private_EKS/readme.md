@@ -30,59 +30,12 @@
          - pods-subnet-azc - 100.x.x.x/22
            
 3. Create the following IAM Roles & Policy.
-   - 
-   - AWSServiceRoleForAmazonEKS Role for EKS Cluster
-     - 
-       - Open IAM --> Roles --> Create Role
-       - Under = Select Trusted entity type
-           - Trusted entity type : AWS service
-           - Use cases : type "EKS" --> Select "EKS Service" --> First Option
-       - Under Add permission : (Default) --> No Changes
-       - Under Name, review, and create : Default = AWSServiceRoleForAmazonEKS --> No Changes
-       - Create role
-         
-   - Cluster-Role for EKS Cluster Creation
-     - 
-       - Open IAM --> Roles --> Create Role
-       - Under = Select Trusted entity type
-           - Trusted entity type : AWS service
-           - Use cases : type "EKS" --> Select "EKS Cluster" --> Second Option
-       - Under Add permission : (Default) --> No Changes
-       - Under Name, review, and create
-           - Role Name : eks-cluster-role
-           - Description : No Changes
-           - Step 1: Select trusted entities : No Changes
-           - Step 2: Add permissions: No Changes
-           - Step 3: Add Tags : Add the require tags
-       - Create Role
-
-   - Add KMS Key Permission to Above cluster-role
-     - 
+   -
+   - Create AWSServiceRoleForAmazonEKS Role follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md         
+   - Create EKS-Cluster-Role for follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md    
+   - Create WorkerNode-Role follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_00_workernode-role.md
+   - Create Terraform Role follow Steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md
      
-   - WorkerNode-Role for Workernode (ec2)
-     - 
-       - Open IAM --> Roles --> Create Role
-       - Under = Select Trusted entity type
-           - Trusted entity type : AWS service
-           - Use cases : type "ec2" --> Select "ec2" --> First Option
-       - Under Add permission : Add Following Permission policies
-           - AmazonEKSWorkerNodePolicy
-           - AmazonEC2ContainerRegistryReadOnly
-           - AmazonSSMManagedInstanceCore
-           - AmazonEKS_CNI_Policy
-           - AmazonEFSCSIDriverPolicy --> Optional for EFS if same role using for EFS for Pods as external Device
-           - AmazonEBSCSIDriverPolicy --> Optional for EBS if same role using for EBS for Pods as external Device
-           - AmazonEC2RoleforSSM --> Optional for SSM
-       - Under Name, review, and create
-           - Role Name : eks-workernode-role
-           - Description : No Changes
-           - Step 1: Select trusted entities : No Changes
-           - Step 2: Add permissions: No Changes
-           - Step 3: Add Tags : Add the require tags
-       - Create Role.
-   - Add KMS Key Permission to Above WorkerNode Role
-     - 
-   - [Edit the WorkerNode-Role Trust-Relationship as Mention Below](https://github.com/mevasaroj/EKS_Creation/blob/main/WorkerNode-Role-trust-Relationship.txt)
      
   
 4. Create the following Security Group for Private connection.
