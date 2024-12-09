@@ -1,7 +1,7 @@
 
 # Create Custom Ingress Policy
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
-- In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Policy__, and then choose __Create policy__.
+- In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Policies__, and then choose __Create policy__.
 - Click on JSON 
 - Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/07_01_policy-ingress.tf
 - Click __Next__
