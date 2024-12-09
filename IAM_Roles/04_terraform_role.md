@@ -3,7 +3,7 @@
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create policy__.
 - Click on JSON 
-- Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/policy_terraform_role.tf
+- Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_01_policy_terraform_role.tf
 - Replace the KMS Key ARN at line no. 65 and 66
 - Click __Next__
 - Under **Review and create** 
@@ -42,4 +42,4 @@
 - Below __Access management__ (Left Pane) --> Click **Roles**
 - Select **terafform-role** from list
 - Click **Trust relationships**
-- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/trust-relationship-terraform-role.tf
+- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_02_trust-relationship-terraform-role.tf
