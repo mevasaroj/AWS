@@ -2,10 +2,11 @@
 # Create Custom Terraform Policy
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - In the navigation pane of the IAM console, Expand __Access management__ (Left panel) choose __Roles__, and then choose __Create policy__.
-- Click on JSON
+- Click on JSON 
 - Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/policy_terraform_role.tf
+- Replace the KMS Key ARN at line no. 65 and 66
 - Click __Next__
-- Under **Review and create** --> Replace the KMS Key ARN at line no. 65 and 66
+- Under **Review and create** 
    - Policy Name : **terafform_policy**
    - Description : **terafform_policy**
    - Add Tags : Add require tags 
