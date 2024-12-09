@@ -14,7 +14,7 @@
       - AmazonEBSCSIDriverPolicy --> Optional for EBS if same role using for EBS for Pods as external Device
       - AmazonEC2RoleforSSM --> Optional for SSM
         
-- Under Name, review, and create
+- Under **Name, review, and create**
    - Role Name : **eks-workernode-role**
    - Description : __No Changes__
    - Step 1: Select trusted entities : __No Changes__
