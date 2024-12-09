@@ -19,7 +19,7 @@
      
  - Click **Create role**
 
-# Add KMS Key Permission to Above cluster-role
+# Add KMS Key Policy to Above eks-cluster-role
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - Below __Access management__ (Left Pane) --> Click **Roles**
 - Select **eks-cluster-role** from list
