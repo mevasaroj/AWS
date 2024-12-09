@@ -48,4 +48,4 @@
 - Below __Access management__ (Left Pane) --> Click **Roles**
 - Select **eks-workernode-role** from list
 - Click **Trust relationships**
-- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/eks-cluster-role_trust_relationship.tf
+- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_01_trust_relationship-workernode-role.tf
