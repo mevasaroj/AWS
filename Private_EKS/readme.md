@@ -29,10 +29,12 @@
          - pods-subnet-azc - 100.x.x.x/22
            
 ## 3. Create the following IAM Roles & Policy.
-   - Create **AWSServiceRoleForAmazonEKS** Role follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md 
-   >          
-   - Create **EKS-Cluster-Role** for follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md 
-   >     
+   - Create **AWSServiceRoleForAmazonEKS** Role follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md
+     >
+     >    
+   - Create **EKS-Cluster-Role** for follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md
+     >
+     >  
    - Create **WorkerNode-Role** follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_00_workernode-role.md
      
    - Create **Terraform Role** follow Steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md
