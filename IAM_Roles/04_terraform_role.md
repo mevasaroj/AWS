@@ -5,7 +5,7 @@
 - Click on JSON
 - Copy and paste the Policy from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/policy_terraform_role.tf
 - Click __Next__
-- Under **Review and create**
+- Under **Review and create** --> Replace the KMS Key ARN at line no. 65 and 66
    - Policy Name : **terafform_policy**
    - Description : **terafform_policy**
    - Add Tags : Add require tags 
