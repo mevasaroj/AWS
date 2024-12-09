@@ -38,3 +38,10 @@
 - Select **eks-cluster-role** from list
 - Under __Permission__ --> Click **Add Permission** --> Click **Attach Policies**
 - Type __KMS__ in search --> Select (Check Mark) __KMS-Key__ Policy (Created above) --> Click **Add Permision**
+
+# Update the  KMS Key Policy to Above eks-cluster-role
+- Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
+- Below __Access management__ (Left Pane) --> Click **Roles**
+- Select **eks-cluster-role** from list
+- Click **Trust relationships**
+- Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_1_eks-cluster-role_trust_relationship.tf
