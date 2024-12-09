@@ -1,4 +1,4 @@
-# eks-cluster-role
+# EKS-Cluster-Role - creation
 
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
   
