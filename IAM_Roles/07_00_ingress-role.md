@@ -39,6 +39,6 @@
 # Update the Trust relationship to ingress-role
 - Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/
 - Below __Access management__ (Left Pane) --> Click **Roles**
-- Select **terafform-role** from list
+- Select **ingress-role** from list
 - Click **Trust relationships**
 - Copy and paste the content from https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/07_02_trust-relationship-ingress.tf
