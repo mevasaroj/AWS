@@ -27,15 +27,13 @@
 ## 3. Create the following IAM Roles & Policy.
 - [Create **AWSServiceRoleForAmazonEKS** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
  
-   - Create **AWSServiceRoleForAmazonEKS** Role follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md
-     >
-     >    
-   - Create **EKS-Cluster-Role** for follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md
-     >
-     >  
-   - Create **WorkerNode-Role** follow steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_00_workernode-role.md
-     
-   - Create **Terraform Role** follow Steps https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md
+- [Create **EKS-Cluster-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md)
+
+- [Create **EKS-WorkerNode-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_00_workernode-role.md)
+
+- [Create **Terraform-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md)
+
+
      
      
      
