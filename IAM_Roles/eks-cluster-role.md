@@ -37,4 +37,4 @@
 - Below __Access management__ (Left Pane) --> Click **Roles**
 - Select **eks-cluster-role** from list
 - Under __Permission__ --> Click **Add Permission** --> Click **Attach Policies**
-- Type __KMS__ in search --> Select (Check Mark) Policy --> Click **Add Permision**
+- Type __KMS__ in search --> Select (Check Mark) __KMS-Key__ Policy (Created above) --> Click **Add Permision**
