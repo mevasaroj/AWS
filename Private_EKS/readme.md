@@ -70,7 +70,7 @@
      - Name tag - optional : **s3-gateway-endpoint**
      - For **Type**, choose **AWS services**
      - For **Services** : Type **com.amazonaws.ap-south-1.s3**
-     - Select __com.amazonaws.ap-south-1.s3__ __Gateway__ (Type)
+     - Select __com.amazonaws.ap-south-1.s3__ Type __Gateway__
      - Under **Network setting**
        - VPC **Select the require vpc**      
      - Under **Route tables**
