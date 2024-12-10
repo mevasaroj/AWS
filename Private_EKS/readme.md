@@ -41,12 +41,17 @@
 
   
 ## 4. Create the following Security Group for Private connection.
-##### 4.1. eks-cluster-addition-security-group
+##### 4.1. vpc-endpoint-security-group
+| Security Group Name | Type    | Protocol |Port | Source | Description |
+|---------------------|---------|----------|-----|--------|-------------|
+|vpc-endpoint-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
+
+##### 4.2. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-addition-security-group | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 
-##### 4.2. eks-cluster-workernode-security-group
+##### 4.3. eks-cluster-workernode-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-workernode-security-group| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
@@ -56,30 +61,20 @@
 |                                     | UDP | UDP | 53 | CP CIDR | Open for DNS |
 |                                     | ALL Traffic | ALL | ALL Traffic | Self-SG | Open for Self traffic |
 
-##### 4.3. vpc-endpoint-security-group
-| Security Group Name | Type    | Protocol |Port | Source | Description |
-|---------------------|---------|----------|-----|--------|-------------|
-|vpc-endpoint-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
-
-
-
-
-
-5. Create the following VPC endpoints for Private connection.
-   -
-   - com.amazonaws.region.s3 - (Gateway Type)
+## 5. Create the following VPC endpoints for Private connection.
+##### com.amazonaws.region.s3 - (Gateway Type)
      -
      -
      -
      -
      - a
-   - com.amazonaws.region.ec2 (Interface)
+##### com.amazonaws.region.ec2 (Interface)
      -
      -
      -
      -
      - a
-   - Create following interface endpoint as created above
+##### Create following interface endpoint as created above
      - 
      - com.amazonaws.region.ecr.api (Interface)
      - com.amazonaws.region.ecr.dkr (Interface)
