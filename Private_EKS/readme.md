@@ -85,8 +85,7 @@
       
      -   Under Tags : Add require tags
      -   Click **Create endpoint**
-  
- 
+   
 #### 5.2. com.amazonaws.region.ec2 (Interface)
   - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
@@ -120,7 +119,7 @@
      -   Click **Create endpoint**
   
   
-  #### 5.3. Create following interface endpoint as created above
+#### 5.3. Create following interface endpoint as created above
 - com.amazonaws.region.ecr.api (Interface)
 - com.amazonaws.region.ecr.dkr (Interface)
 - com.amazonaws.region.sts (Interface)
