@@ -41,19 +41,18 @@
 
   
 ## 4. Create the following Security Group for Private connection.
-##### 4.1. vpc-endpoint-security-group
-```hcl
+#### 4.1. vpc-endpoint-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |vpc-endpoint-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
-```
 
-##### 4.2. eks-cluster-addition-security-group
+
+#### 4.2. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-addition-security-group | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 
-##### 4.3. eks-cluster-workernode-security-group
+#### 4.3. eks-cluster-workernode-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-workernode-security-group| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
@@ -64,7 +63,7 @@
 |                                     | ALL Traffic | ALL | ALL Traffic | Self-SG | Open for Self traffic |
 
 ## 5. Create the following VPC endpoints for Private connection.
-##### 5.1. com.amazonaws.region.s3 - (Gateway Type)
+#### 5.1. com.amazonaws.region.s3 - (Gateway Type)
   - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
   - Choose **Create endpoint**
@@ -82,7 +81,7 @@
   - Under Tags : Add require tags
   - Click **Create endpoint**
  
-##### 5.2. com.amazonaws.region.ec2 (Interface)
+#### 5.2. com.amazonaws.region.ec2 (Interface)
   - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
   - Choose **Create endpoint**
@@ -94,7 +93,7 @@
   -
   -
   - a
-##### 5.3. Create following interface endpoint as created above
+#### 5.3. Create following interface endpoint as created above
 - com.amazonaws.region.ecr.api (Interface)
 - com.amazonaws.region.ecr.dkr (Interface)
 - com.amazonaws.region.sts (Interface)
