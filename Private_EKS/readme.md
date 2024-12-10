@@ -63,8 +63,24 @@
 
 ## 5. Create the following VPC endpoints for Private connection.
 ##### 5.1. com.amazonaws.region.s3 - (Gateway Type)
-     -
-     -
+  - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
+  - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
+  - Choose **Create endpoint**
+  - Choose the Following on page __Create endpoint__
+     - Name tag - optional : **s3-gateway-endpoint**
+     - For **Type**, choose **AWS services**
+     - For **Services** : Type **com.amazonaws.ap-south-1.s3**
+     - Select __com.amazonaws.ap-south-1.s3__ __Gateway__ (Type)
+     - Under **Network setting**
+       - VPC **Select the require vpc**      
+     - Under **Route tables**
+        - Select the **route** associated with all **subnets**
+      
+     - Under **Policy**
+       - Select **Full Access**
+      
+       - Under Tags : Add require tags
+       - Click **Create endpoint**
      -
      -
      - a
