@@ -44,6 +44,7 @@
 ##### 4.1. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
+|eks-cluster-addition-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
 
 
      -
