@@ -62,19 +62,19 @@
 |                                     | ALL Traffic | ALL | ALL Traffic | Self-SG | Open for Self traffic |
 
 ## 5. Create the following VPC endpoints for Private connection.
-##### - com.amazonaws.region.s3 - (Gateway Type)
+##### 5.1. com.amazonaws.region.s3 - (Gateway Type)
      -
      -
      -
      -
      - a
-##### - com.amazonaws.region.ec2 (Interface)
+##### 5.2. com.amazonaws.region.ec2 (Interface)
      -
      -
      -
      -
      - a
-##### - Create following interface endpoint as created above
+##### 5.3. Create following interface endpoint as created above
      - 
      - com.amazonaws.region.ecr.api (Interface)
      - com.amazonaws.region.ecr.dkr (Interface)
