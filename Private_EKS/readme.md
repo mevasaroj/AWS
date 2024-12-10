@@ -70,16 +70,22 @@
   - Choose the Following on page __Create endpoint__
      - Name  : **s3-gateway-endpoint**
      - For **Type**, choose **AWS services**
-     - For **Services** : Type **com.amazonaws.ap-south-1.s3**
+       
+     - For **Services** : Type **s3** enter
        - Select __com.amazonaws.ap-south-1.s3__ Type __Gateway__
+         
      - Under **Network setting**
-       - VPC **Select the require vpc**      
+       - VPC **Select the require vpc**
+         
      - Under **Route tables**
         - Select the **route** associated with all **subnets**
-  - Under **Policy**
-     - Select **Full Access**     
-  - Under Tags : Add require tags
-  - Click **Create endpoint**
+
+     - Under **Policy**
+       - Select **Full Access**
+      
+     -   Under Tags : Add require tags
+     -   Click **Create endpoint**
+  
  
 #### 5.2. com.amazonaws.region.ec2 (Interface)
   - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
