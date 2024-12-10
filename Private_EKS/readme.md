@@ -44,25 +44,17 @@
 ##### 4.1. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
-|eks-cluster-addition-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
+|eks-cluster-addition-security-group | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 
-
-     -
-     -
-     -
-     -
-     - a
 ##### 4.2. eks-cluster-workernode-security-group
-     -
-     -
-     -
-     -
-     - a
+| Security Group Name | Type    | Protocol |Port | Source | Description |
+|---------------------|---------|----------|-----|--------|-------------|
+|eks-cluster-workernode-security-group| HTTPS | TC P| 443 | VPC CIDR | Open for Entire VPC CIDR |
+|                                     | 
 ##### 4.3. vpc-endpoint-security-group
-     -
-     -
-     -
-     - a
+| Security Group Name | Type    | Protocol |Port | Source | Description |
+|---------------------|---------|----------|-----|--------|-------------|
+|vpc-endpoint-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
 
 
 
