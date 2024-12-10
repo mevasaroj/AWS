@@ -81,11 +81,17 @@
   - Click **Create endpoint**
  
 ##### 5.2. com.amazonaws.region.ec2 (Interface)
-     -
-     -
-     -
-     -
-     - a
+  - Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
+  - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
+  - Choose **Create endpoint**
+  - Choose the Following on page __Create endpoint__
+  -
+  -
+  -
+  -
+  -
+  -
+  - a
 ##### 5.3. Create following interface endpoint as created above
 - com.amazonaws.region.ecr.api (Interface)
 - com.amazonaws.region.ecr.dkr (Interface)
