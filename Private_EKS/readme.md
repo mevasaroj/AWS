@@ -39,25 +39,27 @@
 
 - [Create **Terraform-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md)
 
-
-     
-     
-     
   
 ## 4. Create the following Security Group for Private connection.
-#### 4.1. eks-cluster-addition-security-group
+##### 4.1. eks-cluster-addition-security-group
+| Name | Version |
+|------|---------|
+
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
      -
      -
      -
      -
      - a
-#### 4.2. eks-cluster-workernode-security-group
+##### 4.2. eks-cluster-workernode-security-group
      -
      -
      -
      -
      - a
-#### 4.3. vpc-endpoint-security-group
+##### 4.3. vpc-endpoint-security-group
      -
      -
      -
