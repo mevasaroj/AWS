@@ -128,7 +128,7 @@
 
 ## 5. Create the private eks cluster.
 - [Use terraform script to create **amazon linux** eks cluster](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
-- [Use terraform script to create **bottle rocket** eks cluster](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
+- [Use terraform script to create **bottle rocket** eks cluster](https://github.com/mevasaroj/AWS/blob/main/Private_EKS/eks-cluster-al2023.tf)
 
 
 9. 
