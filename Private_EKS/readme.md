@@ -31,6 +31,7 @@
 ```
            
 ## 3. Create the following IAM Roles & Policy.
+```hcl
 - [Create **AWSServiceRoleForAmazonEKS** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
  
 - [Create **EKS-Cluster-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/02_00_eks-cluster-role.md)
@@ -38,7 +39,7 @@
 - [Create **EKS-WorkerNode-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/03_00_workernode-role.md)
 
 - [Create **Terraform-Role** Role](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/04_00_terraform_role.md)
-
+```
   
 ## 4. Create the following Security Group for Private connection.
 ##### 4.1. vpc-endpoint-security-group
