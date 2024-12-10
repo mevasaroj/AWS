@@ -67,7 +67,7 @@
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
   - Choose **Create endpoint**
   - Choose the Following on page __Create endpoint__
-     - Name tag - optional : **s3-gateway-endpoint**
+     - Name  : **s3-gateway-endpoint**
      - For **Type**, choose **AWS services**
      - For **Services** : Type **com.amazonaws.ap-south-1.s3**
      - Select __com.amazonaws.ap-south-1.s3__ Type __Gateway__
