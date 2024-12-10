@@ -70,8 +70,6 @@ module "hbl-aws-aps1-app-lt" {
   
   name                   = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "launch-template"])
   key_name               = var.infra_key
-  #image_id               = "ami-06a670215e8062a14" # arm64
-  #instance_type          = "m6g.xlarge" # For On-Demand - arm64
   image_id               = "ami-001a40397af800ef7" # - x86_64
   instance_type          = "m6a.xlarge" # For On-Demand - x86_64
   user_data              = base64encode(local.app-eks-node-private-userdata)
@@ -88,7 +86,7 @@ module "hbl-aws-aps1-app-lt" {
         volume_size  = 20
         volume_type  = "gp3"
         delete_on_termination = true
-        kms_key_id   = "arn:aws:kms:ap-south-1:911372318716:key/mrk-17ba28fbb760408e8d35ce0f854a00b5"
+        kms_key_id   = "<KMS-Key-ARN>"
       }
       }
   ]
@@ -145,18 +143,18 @@ module "app_eks" {
   cluster_endpoint_private_access = true
   create_cloudwatch_log_group     = false
 
-  vpc_id                                = var.nonpcidss-prod-vpc
+  vpc_id                                = var.vpc
   control_plane_subnet_ids              = ["${var.cp-subnet-aza}", "${var.cp-subnet-azb}", "${var.cp-subnet-azc}"]
   create_cluster_security_group         = false
-  cluster_security_group_id             = var.eks-cluster-additional-sg
-  cluster_additional_security_group_ids = ["${var.eks-cluster-additional-sg}"]
+  cluster_security_group_id             = var.eks-cluster-addition-sg
+  cluster_additional_security_group_ids = ["${var.eks-cluster-addition-sg}"]
 
   create_node_security_group = false
   node_security_group_id     = var.eks-cluster-workernode-sg
 
   enable_irsa     = true
   create_iam_role = false
-  iam_role_arn    = "arn:aws:iam::593793066189:role/hbl-aws-cam-role-eks-cluster-dlm-uat"
+  iam_role_arn    = "<EKS-Cluster-Role-ARN>"
 
   #===========================
   # EKS Cluster Encryption
@@ -167,7 +165,7 @@ module "app_eks" {
     resources : [
       "secrets"
     ],
-    provider_key_arn = "arn:aws:kms:ap-south-1:911372318716:key/mrk-17ba28fbb760408e8d35ce0f854a00b5"
+    provider_key_arn = "<KMS-Key-ARN>"
   }
 
   #===========================
@@ -238,7 +236,7 @@ module "app_eks" {
     create_launch_template          = false
     launch_template_use_name_prefix = false
     create_iam_role                 = false
-    iam_role_arn                    = "arn:aws:iam::593793066189:role/hbl-aws-cam-role-eks-workernode-dlm-uat"
+    iam_role_arn                    = "<EKS-WorkerNode-Role-ARN>"
     force_update_version            = true
     update_config = {
       max_unavailable_percentage = "10"
