@@ -43,14 +43,14 @@
 ## 4. Create the following Security Group for Private connection.
 #### 4.1. vpc-endpoint-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
-|---------------------|---------|----------|-----|--------|-------------|
-|:vpc-endpoint-sg|:HTTPS:|:TCP:|:443:|:VPC CIDR:|Open for Entire VPC CIDR|
+|:---------------------|:---------:|:---------:|:-----:|:--------:|:-------------|
+|vpc-endpoint-sg|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
 
 
 #### 4.2. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
-|:eks-cluster-addition-sg | :HTTPS: | :TCP: | 443 | VPC CIDR | Open for Entire VPC CIDR |
+|eks-cluster-addition-sg | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 
 #### 4.3. eks-cluster-workernode-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
