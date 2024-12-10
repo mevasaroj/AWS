@@ -89,7 +89,7 @@ module "al2023-ondemand-lt" {
         volume_size  = 20
         volume_type  = "gp3"
         delete_on_termination = true
-        kms_key_id   = "<KMS-Key-ARN>"
+        kms_key_id   = "<KMS-Key-ARN>"  # REPLACE WITH KMS-KEY 
       }
       }
   ]
@@ -157,7 +157,7 @@ module "al2023-eks-cluster" {
 
   enable_irsa     = true
   create_iam_role = false
-  iam_role_arn    = "<EKS-Cluster-Role-ARN>"
+  iam_role_arn    = "<EKS-Cluster-Role-ARN>"  # # REPLACE WITH EKS-Cluster-Role ARN 
 
   #===========================
   # EKS Cluster Encryption
@@ -222,7 +222,7 @@ module "al2023-eks-cluster" {
        most_recent                 = true
        resolve_conflicts_on_create = "OVERWRITE"
        resolve_conflicts_on_update = "OVERWRITE"
-       service_account_role_arn = "<eks-efs-role-arn>"
+       service_account_role_arn = "<eks-efs-role-arn>" # # REPLACE WITH EKS-EFS-Role ARN
        tags = merge(var.additional_tags, {
          Name = join("-", [local.org, local.csp, local.region, local.account, local.env, "aws-efs-csi-driver"])
          })
@@ -231,7 +231,7 @@ module "al2023-eks-cluster" {
        most_recent                 = true
        resolve_conflicts_on_create = "OVERWRITE"
        resolve_conflicts_on_update = "OVERWRITE"
-       service_account_role_arn = "<eks-ebs-role-arn>"
+       service_account_role_arn = "<eks-ebs-role-arn>" # # REPLACE WITH EKS-EBS-Role ARN
        tags = merge(var.additional_tags, {
          Name = join("-", [local.org, local.csp, local.region, local.account, local.env, "aws-ebs-csi-driver"])
          })
@@ -248,7 +248,7 @@ module "al2023-eks-cluster" {
     create_launch_template          = false
     launch_template_use_name_prefix = false
     create_iam_role                 = false
-    iam_role_arn                    = "<EKS-WorkerNode-Role-ARN>"
+    iam_role_arn                    = "<EKS-WorkerNode-Role-ARN>"  # # REPLACE WITH EKS-Cluster-WorkerNode-Role ARN
     force_update_version            = true
     update_config = {
       max_unavailable_percentage = "10"
