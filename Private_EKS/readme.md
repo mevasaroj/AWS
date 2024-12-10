@@ -75,16 +75,12 @@
      -
      - a
 ##### 5.3. Create following interface endpoint as created above
-     - 
-     - com.amazonaws.region.ecr.api (Interface)
-     - com.amazonaws.region.ecr.dkr (Interface)
-     - com.amazonaws.region.sts (Interface)
-     - com.amazonaws.region-code.eks (Interface)
-     - com.amazonaws.region-code.eks-auth (Interface)
-     -
-     -
-     -
-     - a
+- com.amazonaws.region.ecr.api (Interface)
+- com.amazonaws.region.ecr.dkr (Interface)
+- com.amazonaws.region.sts (Interface)
+- com.amazonaws.region-code.eks (Interface)
+- com.amazonaws.region-code.eks-auth (Interface)
+
 
   
 9. 
