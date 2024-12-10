@@ -56,7 +56,7 @@
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-workernode-security-group| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
-                                     | TCP | TCP | 9443 | CP CIDR | Open for Webhook |
+|                                      TCP | TCP | 9443 | CP CIDR | Open for Webhook |
 |                                     | TCP | TCP | 10250 | CP CIDR | Open for Kubelet API |
 |                                     | TCP | TCP | 53 | CP CIDR | Open for DNS |
 |                                     | UDP | UDP | 53 | CP CIDR | Open for DNS |
