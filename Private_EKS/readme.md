@@ -91,7 +91,6 @@
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
   - Choose **Create endpoint**
   - Choose the Following on page __Create endpoint__
-  - Choose the Following on page __Create endpoint__
      - Name  : **ec2-endpoint**
      - For **Type**, choose **AWS services**
        
