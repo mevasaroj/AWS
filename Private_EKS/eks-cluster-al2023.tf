@@ -3,22 +3,22 @@
 ################################################################################
 
 provider "tls" {
-  alias = "app_eks"
+  alias = "al2023-eks-cluster"
   proxy {
     from_env = true
   }
 }
 
 provider "kubernetes"{
-  alias                  = "app_eks"
-  host                   = module.app_eks.cluster_endpoint
-  cluster_ca_certificate = base64decode(module.app_eks.cluster_certificate_authority_data)
+  alias                  = "al2023-eks-cluster"
+  host                   = module.al2023-eks-cluster.cluster_endpoint
+  cluster_ca_certificate = base64decode(module.al2023-eks-cluster.cluster_certificate_authority_data)
 
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
     command     = "aws"
     # This requires the awscli to be installed locally where Terraform is executed
-    args = ["eks", "get-token", "--cluster-name", module.app_eks.cluster_name]
+    args = ["eks", "get-token", "--cluster-name", module.al2023-eks-cluster.cluster_name]
   }
 }
 
@@ -28,7 +28,7 @@ provider "kubernetes"{
 
 locals {
 
-  app-eks-node-private-userdata = <<USERDATA
+  al2023-userdata = <<USERDATA
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="==MYBOUNDARY=="
 
@@ -36,9 +36,9 @@ Content-Type: multipart/mixed; boundary="==MYBOUNDARY=="
 Content-Type: text/x-shellscript; charset="us-ascii"
 
 #!/bin/bash
-export eksclustercertificate=$(aws eks describe-cluster --query "cluster.certificateAuthority.data" --output text --name '${module.app_eks.cluster_name}' --region ap-south-1)
-export apiserverendpoint=$(aws eks describe-cluster --query "cluster.endpoint" --output text --name '${module.app_eks.cluster_name}' --region ap-south-1)
-export cidr=$(aws eks describe-cluster --query "cluster.kubernetesNetworkConfig.serviceIpv4Cidr" --output text --name '${module.app_eks.cluster_name}' --region ap-south-1)
+export eksclustercertificate=$(aws eks describe-cluster --query "cluster.certificateAuthority.data" --output text --name '${module.al2023-eks-cluster.cluster_name}' --region ap-south-1)
+export apiserverendpoint=$(aws eks describe-cluster --query "cluster.endpoint" --output text --name '${module.al2023-eks-cluster.cluster_name}' --region ap-south-1)
+export cidr=$(aws eks describe-cluster --query "cluster.kubernetesNetworkConfig.serviceIpv4Cidr" --output text --name '${module.al2023-eks-cluster.cluster_name}' --region ap-south-1)
 cat > nodeadm.yaml<<EOF
 apiVersion: node.eks.aws/v1alpha1
 kind: NodeConfig
@@ -47,7 +47,7 @@ spec:
     apiServerEndpoint: $apiserverendpoint
     certificateAuthority: $eksclustercertificate
     cidr: $cidr
-    name: '${module.app_eks.cluster_name}'
+    name: '${module.al2023-eks-cluster.cluster_name}'
 EOF
 nodeadm init --config-source file://nodeadm.yaml
 
@@ -64,15 +64,18 @@ USERDATA
 # Custom Launch Template for Managed Node groups
 #################################################################################################################################################
 
-module "hbl-aws-aps1-app-lt" {
+module "al2023-ondemand-lt" {
   source  = "terraform-aws-modules/autoscaling/aws"
   create = false   # AUTOSCALING GROUP
   
-  name                   = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "launch-template"])
+  name                   = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "al2023-ondemand-lt"])
   key_name               = var.infra_key
-  image_id               = "ami-001a40397af800ef7" # - x86_64
+
+   # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.31/amazon-linux-2023/x86_64/standard/recommended/image_id --region ap-south-1
+   # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.30/amazon-linux-2023/arm64/standard/recommended/image_id --region ap-south-1
+  image_id               = "ami-05b6aeac213e064e0" # - x86_64
   instance_type          = "m6a.xlarge" # For On-Demand - x86_64
-  user_data              = base64encode(local.app-eks-node-private-userdata)
+  user_data              = base64encode(local.al2023-userdata)
   update_default_version = true
   security_groups        = ["${var.eks-cluster-workernode-sg}"]
   enable_monitoring      = false
@@ -103,51 +106,51 @@ module "hbl-aws-aps1-app-lt" {
     {
     resource_type = "instance"
     tags = merge(var.additional_tags, {
-      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "eks-node"])
+      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "al2023-ondemand-eks-node"])
           } ) },
     {
     resource_type = "volume"
     tags = merge(var.additional_tags, {
-      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "eks-node-volume"])
+      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "al2023-ondemand-eks-node-volume"])
           } ) },
     {
     resource_type = "network-interface"
     tags = merge(var.additional_tags, {
-      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "eks-node-eni"])
+      Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "al2023-ondemand-eks-node-eni"])
       } ) }
    ]
   
-  tags = merge( { Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "launch-template"]) }, 
+  tags = merge( { Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "al2023-ondemand-lt"]) }, 
     var.additional_tags ) 
 }
 
 
 ##############################################################################################################################################################
-# EKS Cluster & Managed Node groups Module Fastag 
+# EKS Cluster & Managed Node groups Module 
 ##############################################################################################################################################################
 
-module "app_eks" {
+module "al2023-eks-cluster" {
 
   providers = {
-    tls        = tls.app_eks
-    kubernetes = kubernetes.app_eks
+    tls        = tls.al2023-eks-cluster
   }
 
-  source  = "terraform-aws-modules/eks/aws"
+
+  #source  = "terraform-aws-modules/eks/aws"
   create = true
 
-  cluster_name    = join("-", [local.org, local.csp, local.region, local.account, local.env, "app-cluster"])
-  cluster_version = "1.30"
+  cluster_name    = join("-", [local.org, local.csp, local.region, local.account, local.env, "al2023-eks-cluster"])
+  cluster_version = "1.31"
 
   cluster_endpoint_public_access  = false
   cluster_endpoint_private_access = true
   create_cloudwatch_log_group     = false
 
-  vpc_id                                = var.vpc
+  vpc_id                                = var.nonpcidss-prod-vpc
   control_plane_subnet_ids              = ["${var.cp-subnet-aza}", "${var.cp-subnet-azb}", "${var.cp-subnet-azc}"]
   create_cluster_security_group         = false
-  cluster_security_group_id             = var.eks-cluster-addition-sg
-  cluster_additional_security_group_ids = ["${var.eks-cluster-addition-sg}"]
+  cluster_security_group_id             = var.eks-cluster-additional-sg
+  cluster_additional_security_group_ids = ["${var.eks-cluster-additional-sg}"]
 
   create_node_security_group = false
   node_security_group_id     = var.eks-cluster-workernode-sg
@@ -183,13 +186,12 @@ module "app_eks" {
     coredns = {
       most_recent                 = true
       resolve_conflicts_on_create = "OVERWRITE"
-      resolve_conflicts_on_update = "OVERWRITE"
+      resolve_conflicts_on_update = "PRESERVE"
       tags = merge(var.additional_tags, {
         Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "app-coredns"])
         }
       )
     }
-
     kube-proxy = {
       most_recent                 = true
       resolve_conflicts_on_create = "OVERWRITE"
@@ -200,18 +202,27 @@ module "app_eks" {
       )
     }
     vpc-cni = {
+      before_compute              = true
       most_recent                 = true
       resolve_conflicts_on_create = "OVERWRITE"
       resolve_conflicts_on_update = "OVERWRITE"
-      tags = merge(var.additional_tags, {
-        Name = join("-", [local.org, local.csp, local.region, local.vpcname, local.env, local.account, "app-vpc-cni"])
-        }
-      )
-    }
+      configuration_values = jsonencode({
+        env = {
+           AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG = "true"
+           AWS_VPC_K8S_CNI_EXTERNALSNAT = "false"
+           ENI_CONFIG_LABEL_DEF = "topology.kubernetes.io/zone"
+           ENABLE_PREFIX_DELEGATION = "true"            
+           WARM_PREFIX_TARGET = "1"
+        }})
+    	tags = merge(var.additional_tags, {
+         Name = join("-", [local.org, local.csp, local.region, local.account, local.env, "aws-efs-csi-driver"])
+         })
+     }    
     aws-efs-csi-driver = {
        most_recent                 = true
        resolve_conflicts_on_create = "OVERWRITE"
        resolve_conflicts_on_update = "OVERWRITE"
+       service_account_role_arn = "<eks-efs-role-arn>"
        tags = merge(var.additional_tags, {
          Name = join("-", [local.org, local.csp, local.region, local.account, local.env, "aws-efs-csi-driver"])
          })
@@ -220,6 +231,7 @@ module "app_eks" {
        most_recent                 = true
        resolve_conflicts_on_create = "OVERWRITE"
        resolve_conflicts_on_update = "OVERWRITE"
+       service_account_role_arn = "<eks-ebs-role-arn>"
        tags = merge(var.additional_tags, {
          Name = join("-", [local.org, local.csp, local.region, local.account, local.env, "aws-ebs-csi-driver"])
          })
@@ -245,22 +257,26 @@ module "app_eks" {
 
   eks_managed_node_groups = {
 
-    ng = {
-      name               = join("-", [local.org, local.csp, local.region, local.vpcname, local.account, local.env, "ng"])
-      min_size           = 1
-      max_size           = 15
-      desired_size       = 3
-      launch_template_id = module.hbl-aws-aps1-app-lt.launch_template_id
-      disk_size          = 20
-      subnet_ids         = ["${var.dp-subnet-aza}", "${var.dp-subnet-azb}", "${var.dp-subnet-azc}"]
-      capacity_type      = "ON_DEMAND"
+  ondemand = {
+      name               = join("-", [local.org, local.csp, local.region, local.vpcname, local.account, local.env, "ondemand-ng"])
+      min_size           = 1      
+      desired_size       = 1
+      max_size           = 1
+      launch_template_id = module.al2023-ondemand-lt.launch_template_id
+      subnet_ids         = ["${var.dp-subnet-aza}", "${var.dp-subnet-azb}", "${var.dp-subnet-azc}"]   
+      capacity_type      = "ON_DEMAND"  
       tags = merge(var.additional_tags, {
-        Name = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "ng"])
-        }
-      )
+        Name = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "ondemand-ng"])
+      })
     }
   }
-
+ 
+  # Cluster Tags
+  tags = merge(var.additional_tags, {
+    Name = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "al2023-eks-cluster"])
+    } )
+    
 }
+
   
 #=================================================================================================================================================================
