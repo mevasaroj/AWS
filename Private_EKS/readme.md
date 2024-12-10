@@ -44,18 +44,18 @@
 #### 4.1. vpc-endpoint-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
-|vpc-endpoint-security-group|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
+|vpc-endpoint-sg|HTTPS|TCP|443|VPC CIDR|Open for Entire VPC CIDR|
 
 
 #### 4.2. eks-cluster-addition-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
-|eks-cluster-addition-security-group | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
+|eks-cluster-addition-sg | HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 
 #### 4.3. eks-cluster-workernode-security-group
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
-|eks-cluster-workernode-security-group| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
+|eks-cluster-workernode-sg| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
 |                                     | TCP | TCP | 9443 | CP CIDR | Open for Webhook |
 |                                     | TCP | TCP | 10250 | CP CIDR | Open for Kubelet API |
 |                                     | TCP | TCP | 53 | CP CIDR | Open for DNS |
@@ -109,7 +109,7 @@
        - Select 1 subnet from each zone
   
      - Under **Security groups**
-       - Select : **vpc-endpoint-security-group** created above
+       - Select : **vpc-endpoint-sg** created above
       
      - Under **Policy**
        - Select **Full Access**
