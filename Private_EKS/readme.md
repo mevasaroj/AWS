@@ -75,15 +75,11 @@
        - VPC **Select the require vpc**      
      - Under **Route tables**
         - Select the **route** associated with all **subnets**
-      
-     - Under **Policy**
-       - Select **Full Access**
-      
-       - Under Tags : Add require tags
-       - Click **Create endpoint**
-     -
-     -
-     - a
+  - Under **Policy**
+     - Select **Full Access**     
+  - Under Tags : Add require tags
+  - Click **Create endpoint**
+ 
 ##### 5.2. com.amazonaws.region.ec2 (Interface)
      -
      -
