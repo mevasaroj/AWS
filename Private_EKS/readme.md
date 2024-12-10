@@ -127,7 +127,11 @@
 - com.amazonaws.region-code.eks-auth (Interface)
 
 
-  
+## 5. Create the private eks cluster.
+- [Use terraform script to create **amazon linux** eks cluster](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
+- - [Use terraform script to create **bottle rocket** eks cluster](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
+
+
 9. 
   
 
