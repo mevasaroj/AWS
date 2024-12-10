@@ -65,7 +65,7 @@ USERDATA
 #################################################################################################################################################
 
 module "hbl-aws-aps1-app-lt" {
-  source  = "terraform.hdfcbank.com/HDFCBANK/module/aws//modules/aws-autoscaling"
+  source  = "terraform-aws-modules/autoscaling/aws"
   create = false   # AUTOSCALING GROUP
   
   name                   = join("-", [local.org, local.csp, local.region, local.account, local.vpcname, local.env, "launch-template"])
@@ -133,7 +133,7 @@ module "app_eks" {
     kubernetes = kubernetes.app_eks
   }
 
-  source  = "terraform.hdfcbank.com/HDFCBANK/module/aws//modules/aws-eks"
+  source  = "terraform-aws-modules/eks/aws"
   create = true
 
   cluster_name    = join("-", [local.org, local.csp, local.region, local.account, local.env, "app-cluster"])
