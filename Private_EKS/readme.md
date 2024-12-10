@@ -42,12 +42,10 @@
   
 ## 4. Create the following Security Group for Private connection.
 ##### 4.1. eks-cluster-addition-security-group
-| Name | Version |
-|------|---------|
+| Security Group Name | Type    | Protocol |Port | Source | Description |
+|---------------------|---------|----------|-----|--------|-------------|
 
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
      -
      -
      -
