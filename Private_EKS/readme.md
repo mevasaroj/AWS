@@ -56,7 +56,7 @@
 | Security Group Name | Type    | Protocol |Port | Source | Description |
 |---------------------|---------|----------|-----|--------|-------------|
 |eks-cluster-workernode-security-group| HTTPS | TCP | 443 | VPC CIDR | Open for Entire VPC CIDR |
-|                                      TCP | TCP | 9443 | CP CIDR | Open for Webhook |
+|                                     | TCP | TCP | 9443 | CP CIDR | Open for Webhook |
 |                                     | TCP | TCP | 10250 | CP CIDR | Open for Kubelet API |
 |                                     | TCP | TCP | 53 | CP CIDR | Open for DNS |
 |                                     | UDP | UDP | 53 | CP CIDR | Open for DNS |
@@ -86,14 +86,35 @@
   - In the navigation pane, choose **Endpoints** under __PrivateLink and Lattice__
   - Choose **Create endpoint**
   - Choose the Following on page __Create endpoint__
-  -
-  -
-  -
-  -
-  -
-  -
-  - a
-#### 5.3. Create following interface endpoint as created above
+  - Choose the Following on page __Create endpoint__
+     - Name  : **ec2-endpoint**
+     - For **Type**, choose **AWS services**
+       
+     - Under **Services** :
+       - Type **ec2** hit enter
+       - Select **com.amazonaws.ap-south-1.ec2** from **Service Name**
+       
+     - Under **Network setting**
+       - VPC **Select the require vpc**
+         
+       - under **Additional settings**
+         - DNS Name : Check Mark **Enable DNS name**
+         - DNS record IP type : Select **Ipv4**
+           
+     - Under **Subnets**
+       - Select 1 subnet from each zone
+  
+     - Under **Security groups**
+       - Select : **vpc-endpoint-security-group** created above
+      
+     - Under **Policy**
+       - Select **Full Access**
+      
+     -   Under Tags : Add require tags
+     -   Click **Create endpoint**
+  
+  
+  #### 5.3. Create following interface endpoint as created above
 - com.amazonaws.region.ecr.api (Interface)
 - com.amazonaws.region.ecr.dkr (Interface)
 - com.amazonaws.region.sts (Interface)
