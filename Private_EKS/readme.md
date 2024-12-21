@@ -64,7 +64,15 @@
 
 ## 5. Create the following VPC endpoints for Private connection.
 
--  [Create **com.amazonaws.region.s3 - (Gateway Type)** vpc-endpoint] (https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/s3-gateway-vpc-endpoint.md)
+- [Create **com.amazonaws.region.s3 - (Gateway Type)** Role](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/s3-gateway-vpc-endpoint.md)
+-
+-
+-
+-
+-
+-
+- a
+
 
 
 #### 5.2. com.amazonaws.region.ec2 (Interface)
