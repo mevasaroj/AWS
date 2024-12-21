@@ -68,7 +68,7 @@
 -
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 -
--[Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)-
+-[Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 -[Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
