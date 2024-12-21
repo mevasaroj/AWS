@@ -65,27 +65,20 @@
 ## 5. Create the following VPC endpoints for Private connection.
 
 - [Create **com.amazonaws.region.s3 - (Gateway Type)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/s3-gateway-vpc-endpoint.md)
--
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
-- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
-- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
-- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
-- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
-- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region.**ecr.api** (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region.**ecr.dkr** (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region.**sts** (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region-code.**eks** (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region-code.**eks-auth** (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 
 
 
 
-  
-#### 5.3. Create following interface endpoint as created above
-- com.amazonaws.region.**ecr.api** (Interface)
-- com.amazonaws.region.**ecr.dkr** (Interface)
-- com.amazonaws.region.**sts** (Interface)
-- com.amazonaws.region-code.**eks** (Interface)
-- com.amazonaws.region-code.**eks-auth** (Interface)
 
 
-## 5. Create the private eks cluster.
+
+## 6. Create the private eks cluster.
 - [Use terraform script to create **amazon linux** eks cluster](https://github.com/mevasaroj/AWS/blob/main/IAM_Roles/01_AWSServiceRoleForAmazonEKS.md)
 - [Use terraform script to create **bottle rocket** eks cluster](https://github.com/mevasaroj/AWS/blob/main/Private_EKS/eks-cluster-al2023.tf)
 
