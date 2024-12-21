@@ -67,9 +67,8 @@
 - [Create **com.amazonaws.region.s3 - (Gateway Type)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/s3-gateway-vpc-endpoint.md)
 -
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
--
--[Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
--[Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
+- [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
 - [Create **com.amazonaws.region.ec2 (Interface)** vpc-endpoint](https://github.com/mevasaroj/AWS/blob/main/VPC-Endpoints/ec2-interface-vpc-endpoint.md)
